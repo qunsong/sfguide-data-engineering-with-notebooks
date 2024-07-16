@@ -10,13 +10,13 @@ Last Updated: 6/11/2024
 -- See https://docs.snowflake.com/en/LIMITEDACCESS/execute-immediate-from-template
 
 -- Create the Notebooks
---USE SCHEMA {{env}}_SCHEMA;
-CREATE OR REPLACE NOTEBOOK IDENTIFIER('"DEMO_DB"."INTEGRATIONS"."{{env}}_06_load_excel_files"')
-    FROM '@"DEMO_DB"."INTEGRATIONS"."DEMO_GIT_REPO"/branches/"{{branch}}"/notebooks/06_load_excel_files/'
-    QUERY_WAREHOUSE = 'DEMO_WH'
-    MAIN_FILE = '06_load_excel_files.ipynb';
+-- --USE SCHEMA {{env}}_SCHEMA;
+-- CREATE OR REPLACE NOTEBOOK IDENTIFIER('"DEMO_DB"."INTEGRATIONS"."{{env}}_06_load_excel_files"')
+--     FROM '@"DEMO_DB"."INTEGRATIONS"."DEMO_GIT_REPO"/branches/"{{branch}}"/notebooks/06_load_excel_files/'
+--     QUERY_WAREHOUSE = 'DEMO_WH'
+--     MAIN_FILE = '06_load_excel_files.ipynb';
 
-ALTER NOTEBOOK "DEMO_DB"."INTEGRATIONS."{{env}}_06_load_excel_files" ADD LIVE VERSION FROM LAST;
+-- ALTER NOTEBOOK "DEMO_DB"."INTEGRATIONS."{{env}}_06_load_excel_files" ADD LIVE VERSION FROM LAST;
 
 CREATE OR REPLACE NOTEBOOK IDENTIFIER('"DEMO_DB"."{{env}}_SCHEMA"."{{env}}_06_load_excel_files"')
     FROM '@"DEMO_DB"."INTEGRATIONS"."DEMO_GIT_REPO"/branches/"{{branch}}"/notebooks/06_load_excel_files/'
